@@ -1,8 +1,8 @@
-PWD c:/Users/henri/OneDrive/Documents/uni/Hausaufgaben/Semester2/Mathe B/A1
+PWD c:/Users/henri/OneDrive/Documents/uni/Hausaufgaben/Semester2/Mathematik-fuer-die-Informatik-B-SS23-CAU-Kiel/A1
 INPUT c:/texlive/2023/texmf.cnf
 INPUT c:/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/henri/OneDrive/Documents/uni/Hausaufgaben/Semester2/Mathe B/A1/FlorianSchlösser_HenriHeyden_MatheB_Blatt01.tex
+INPUT c:/Users/henri/OneDrive/Documents/uni/Hausaufgaben/Semester2/Mathematik-fuer-die-Informatik-B-SS23-CAU-Kiel/A1/FlorianSchlösser_HenriHeyden_MatheB_Blatt01.tex
 OUTPUT FlorianSchlösser_HenriHeyden_MatheB_Blatt01.log
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
