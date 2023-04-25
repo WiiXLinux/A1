@@ -26,13 +26,13 @@ Wir nehmen an, dass $n \in \mathbb{N}$ gilt und, dass alle in dieser Bearbeitung
 Für den Sandwichsatz definieren wir die folgenden Folgen: \\ $(a_n)_n := \left(\frac{n}{2^n}\right)_n$, $(b_n)_n := \left(\frac{1}{2^n}\right)_n$, $(x_n)_n := \left(\frac{\sqrt{n}}{2^n}\right)_n$.\\
 Nun werden wir zeigen, dass $\lim_{n}a_n = \lim_{n}b_n = 0$ gilt. \\
 In der Präsenzübung wurde gezeigt, dass \textbf{(A)} $\lim_{n}a_n = 0$ gilt, \\
-weswegen wir nur zeigen müssen, dass \textbf{(B)} $\lim_{n}b_n = 0$ gilt. \\
+weswegen wir nur zeigen müssen, dass \textbf{(B)} $\lim_{n}b_n = 0$ gilt damit wir den ersten Teil des Sandwichsatzes erfüllen. \\
 Beobachte, dass $\forall n \in \mathbb N: 2^n = |2^n|$ gilt, da $2^n$ für alle $n \in \mathbb N$ monoton steigend ist, somit ist nach Satz 2.24 die Aussage \textbf{B} äquivalent zu $\lim_{n}\frac{1}{b_n} = +\infty$ \\
 Um $\lim_{n}\frac{1}{b_n} = \lim_{n}2^n = +\infty$ zu zeigen, wenden wir Satz 2.10.c an: \\
 $\lim_{n}2^n = +\infty \Longleftrightarrow \forall r: \exists n_0: \forall n \ge n_0: r < 2^n$. \\
 Wir wissen allgemein, dass $n \ge n_0 \Rightarrow 2^n \ge 2^{n_0}$ gilt, da wie erwähnt $2^n$ monoton steigend ist.
-Damit setzen wir $n_0 := |r| + 1$ und wir untersuchen die folgenden Fälle:\\
-Hierfür setzen wir $d:= n - n_0$, beobachte, $d \ge 0$. \\
+Wähle $r$ beliebig, dann setzen wir $n_0 := |r| + 1$ und wir untersuchen die folgenden Fälle:\\
+Hierfür setzen wir $d:= n - n_0$, beobachte, $d \ge 0$ nach den gegebenen Definitionen für $n$ und $n_0$. \\
 \textbf{(1.) $r < 0$:} \\
 Dann gilt: $r < 0 < b_n$, da der minimale Wert für $b_n$, 1 ist. \\
 \textbf{(2.) $r \ge 0$:} \\
