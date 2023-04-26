@@ -6,4 +6,4 @@
 </script>
 
 
-%\forall test%
+$\forall test$
