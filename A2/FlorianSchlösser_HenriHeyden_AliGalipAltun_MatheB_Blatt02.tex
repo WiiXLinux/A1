@@ -8,15 +8,19 @@
 \usepackage{amssymb}
 
 \newcommand*{\qed}{\null\nobreak\hfill\ensuremath{\square}}
+\newcommand*{\puffer}{\text{ }\text{ }\text{ }\text{ }}
 
 \pagestyle{plain}
+\allowdisplaybreaks
 
 \title{Mathematik für die Informatik B - Hausaufgabenserie 2}
 \author{Florian Schlösser, Henri Heyden, Ali Galip Altun \\ \small stu240349, stu240825, stu242631}
 \date{}
 
+
 \begin{document}
 \maketitle
+
 
 \doublespacing
 \section*{Aufgabe 1}
@@ -54,14 +58,48 @@ $\lim_{n}\frac{\sqrt{n}}{2^n} = \lim_{n}a_n = \lim_{n}b_n = 0$ gilt. \qed \\
 
 \section*{Aufgabe 2}
 Es ist zu zeigen, dass $\left(\frac{1}{n}\sum_{k = 1}^{n}x_k\right)_{n \ge 1}$ konvergiert, wenn wir wissen, dass $(x_k)_{k \ge 1}$ konvergiert. Das heißt es existiert ein Limies der Folge $\left(\frac{1}{n}\sum_{k = 1}^{n}x_k\right)_{n \ge 1}$,
-welche wir folgend $m$ nennen werden, der in den reelen Zahlen liegt, wenn dieses Kriterium für die Folge $(x_k)_{k \ge 1}$ gilt. \\
+welche wir folgend $m_n$ nennen werden, der in den reelen Zahlen liegt, wenn dieses Kriterium für die Folge $(x_k)_{k \ge 1}$ gilt. \\
 Da $(x_k)_{k \ge 1}$ konvergiert, wissen wir nach der Definiton der Konvergenz (2.1.5), dass demnach für diese Folge ein reeler Grenzwert existiert, den wir folgend mit $y$ bezeichnen. Wir schreiben also: $y := \lim_{k}x_k$. \\
-Wir werden zeigen, dass $y$ unser gesuchter Limes der Folge $m$ ist. Hiermit würden wir wissen, dass damit der Grenzwert von $m$ auch in $\mathbb R$ liegt, wodurch nach der Definiton der Konvergenz die Folge $m$ konvergiert. \\
+Wir werden zeigen, dass $y$ unser gesuchter Limes der Folge $m_n$ ist. Hiermit würden wir wissen, dass damit der Grenzwert von $m_n$ auch in $\mathbb R$ liegt, wodurch nach der Definiton der Konvergenz die Folge $m_n$ konvergiert. \\
 Nach Satz 2.10.b ist hiermit zu zeigen: $\forall \epsilon > 0: \exists n_0: \forall n \ge n_0: |m_n - y| < \epsilon$.
-Wähle $\epsilon$ beliebig größer $0$. \\
-
-% Das kommt später ;)
-% Setze $n_0 := \left\lceil{2t \cdot \frac{a - 1}{\epsilon}}\right\rceil$
+Wähle $\epsilon$ beliebig größer $0$. Setze $n_0 := \left\lceil\frac{n_1 \cdot t}{\epsilon}\right\rceil$. Wir werden zeigen, wie wir auf dieses $n_0$ kommen, und warum es sich eignet. \\
+Bei der folgenden Umformung ist zu beachten, dass mit $n_1$ der Mindestwertindex der Folge $(x_k)_k$ ist, sodass diese das Epsilon Kriterium erfüllt:
+\vspace{-0.5cm}
+\begin{align*}
+    & \puffer |m_n - y| & \text{| Einsetzen in $m_n$} \\
+    & = \left|-y + \frac{1}{n} \sum_{k=1}^{n}x_k\right| &  \text{| Def. Inverses} \\
+    & = \left|n \cdot \frac{1}{n} \cdot (-y) + \frac{1}{n} \sum_{k=1}^{n}x_k\right| & \text{| }n \cdot y = \sum_{k=1}^{n} y\\
+    & = \left|\frac{1}{n} \cdot \sum_{k=1}^{n}(x_k - y)\right| & \text{| $\frac{1}{n}$ positiv, da $n > 0$} \\
+    & = \frac{1}{n} \cdot \left| \sum_{k=1}^{n}(x_k - y)\right| & \text{| Dreiecksungleichung (Satz 2.2.6)} \\
+    & \le \frac{1}{n} \cdot \sum_{k=1}^{n}|x_k - y| & \text{| Spalte die Summe am Punkt $n_1$} \\
+    & = \frac{1}{n} \cdot \sum_{k=1}^{n_1 -1 }|x_k - y| + \frac{1}{n} \cdot \sum_{k=n_1}^{n}|x_k - y| & \text{| beobachte $|x_k - y| < \epsilon$} \\
+    & < \frac{1}{n} \cdot \sum_{k=1}^{n_1 -1 }|x_k - y| + \frac{1}{n} \cdot \sum_{k=n_1}^{n}\epsilon & \\
+    & \le \frac{1}{n} \cdot \sum_{k=1}^{n_1 -1 }|x_k - y| + \frac{1}{n} \cdot \sum_{k=1}^{n}\epsilon & \\
+    & \le \frac{1}{n} \cdot \sum_{k=1}^{n_1 -1 }|x_k - y| + \epsilon &
+\end{align*}
+Beobachte, dass die Summe aus endlich vielen Summanden besteht. Von diesen Summanden existiert ein Maximum.\\
+Wir nennen es $t$ mit $t := max\big\{|x_\alpha - y| \big| \alpha \in [1,n_1]_\mathbb{N}\big\}$, dann gilt:
+\begin{align*}
+    & \puffer \frac{1}{n} \cdot \sum_{k=1}^{n_1 -1 }|x_k - y| + \epsilon & \text{| Setze t ein und erweitere die Summe bis auf $n_1$ statt $n_1-1$} \\
+    & \le \frac{1}{n} \cdot \sum_{k=1}^{n_1}t + \epsilon & \text{| Löse die Summe auf} \\
+    & = \frac{n_1 \cdot t}{n} + \epsilon
+\end{align*}
+Wir werden nun zeigen, dass $\frac{n_1 \cdot t}{n} \le \epsilon$ gilt, wenn $n_0 := \left\lceil\frac{n_1 \cdot t}{\epsilon}\right\rceil$ gesetzt ist. Wir Betrachten $n := n_0$:
+\begin{align*}
+    & \puffer \frac{n_1 \cdot t}{n} & n_0 = n \\
+    & = \frac{n_1 \cdot t}{n_0} & \text{| Setze $n_0$ ein} \\
+    & = \frac{n_1 \cdot t}{\left(\frac{n_1 \cdot t}{\epsilon}\right)} & \text{| Bruchrechnung} \\
+    & = \frac{\epsilon \cdot n_1 \cdot t}{n_1 \cdot t} & \text{| Bruchrechnung} \\
+    & = \epsilon
+\end{align*}
+Da es hier gilt, gilt $\frac{n_1 \cdot t}{n} \le \epsilon$ auch für $n > n_0$, da dann $\frac{n_1 \cdot t}{n} < \frac{n_1 \cdot t}{n_0}$ gilt. \\
+Insgesamt gilt damit: $\frac{n_1 \cdot t}{n} + \epsilon \le 2 \cdot \epsilon$. \\
+Hierdurch haben wir gezeigt, dass $|m_n - y| < 2\cdot \epsilon$ gilt.
+Nun beobachte, dass nach der Definiton des Epsilon Kriterium's  $|m_n - y| < \epsilon$ gelten soll, angenommen $\epsilon > 0$ gelte. Beobachte aber, dass angenommen $\epsilon_1 > 0$ gelte, dass dann mit $2\cdot \epsilon_1$ alle Zahlen die durch alleine $\epsilon_0 > 0$ darstellbar sind, auch durch $2\cdot \epsilon_1$ darstellbar sind, es werden nur unterschiedliche Eingabewerte für die beiden $\epsilon$ gewählt mit $\epsilon_1 = \frac{\epsilon_0}2$, angenommen $\epsilon_0 = 2\cdot \epsilon_1$ sollte gelten. \\
+Durch diese Beobachtung ließe sich sogar zeigen, dass man das Epsilon Kriterium erweitern kann, sodass man nur ein positives Vielfaches von $\epsilon$ größer haben müsse (mit $\epsilon > 0 $ beliebig) für die Differenz zwischen Limes und Folge, was wir aber nicht tun werden, weil wir uns hier nur das doppelte Vielfache von $\epsilon$ interessieren und dies schon gezeigt wurde. \\
+Damit erfülllt die Folge $m_n - y$ das "2-fache Epsilon Kriterium", das heißt\\
+$\forall \epsilon > 0: \exists n_0: \forall n \ge n_0: |m_n - y| < 2 \cdot \epsilon$ gilt mit y als dem Limes der Folge $(x_k)_{k\ge n_1}$. \\
+Damit wissen wir, dass die Folge $(m_n)_{n \ge n_0}$ konvergiert zu $y$. \qed
 
 
 \end{document}
