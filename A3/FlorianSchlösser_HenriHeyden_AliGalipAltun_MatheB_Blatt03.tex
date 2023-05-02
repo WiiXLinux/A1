@@ -1,0 +1,35 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[ngerman]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts} 
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcommand*{\qed}{\null\nobreak\hfill\ensuremath{\square}}
+\newcommand*{\puffer}{\text{ }\text{ }\text{ }\text{ }}
+
+\pagestyle{plain}
+\allowdisplaybreaks
+
+\title{Mathematik für die Informatik B - Hausaufgabenserie 3}
+\author{Florian Schlösser, Henri Heyden, Ali Galip Altun \\ \small stu240349, stu240825, stu242631}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+
+\doublespacing
+\section*{Aufgabe 1}
+Behauptung: \((x_n)_{n\ge 1}\) divergiert unbestimmt. \\
+Voraussetzung: \(odd := \{2n+1 \mid n \in \mathbb N\}, even := \{2n \mid n \in \mathbb N\}\) \\
+Beweis: Nehme an, \((x_n)_{n\ge 1}\) konvergiere oder divergiere bestimmt. Demnach müsse gelten, dass \((x_n)_{n\ge 1}\) einen Limes habe, den wir \(p\) nennen werden. \\
+Definiere hierzu die Teilfolgen \((a_n)_{n \ge 1} := (x_{2n+1})_{n \ge 1}\) und \((b_n)_{n \ge 1} := (x_{2n})_{n \ge 1}\) von \(x\) (es ist leicht zu sehen, dass \(2n + 1\) und \(2n\) strenge monotone Abbildungen von \(n\) sind für \(n \in \mathbb N\)).\\
+Beobachte, dass nach den Definitionen von \(odd\) und \(even\), \(a_n = \frac{1}{n}\) und \(b_n = n\) gelten.
+Nach Satz 2.42 müssten die Limetes von den Folgen \(a\) und \(b\) gleich dem Limes von \(x\) gleichen. \\
+Beobachte aber, dass \(lim_n a_n = 0 \ne lim_n b_n = +\infty\) nach Skript gilt, was uns zu einem Widerspruch der Annahme \((x_n)_{n\ge 1}\) konvergiere oder divergiere bestimmt. \\
+Demnach gilt das Gegenteil, also divergiert \((x_n)_{n\ge 1}\) unbestimmt. \qed
+\end{document}
