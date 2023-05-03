@@ -32,4 +32,28 @@ Beobachte, dass nach den Definitionen von \(odd\) und \(even\), \(a_n = \frac{1}
 Nach Satz 2.42 müssten die Limetes von den Folgen \(a\) und \(b\) gleich dem Limes von \(x\) gleichen. \\
 Beobachte aber, dass \(lim_n a_n = 0 \ne lim_n b_n = +\infty\) nach Skript gilt, was uns zu einem Widerspruch der Annahme \((x_n)_{n\ge 1}\) konvergiere oder divergiere bestimmt. \\
 Demnach gilt das Gegenteil, also divergiert \((x_n)_{n\ge 1}\) unbestimmt. \qed
+\section*{Aufgabe 2}
+Behauptung: \(\lim_{n}\sqrt[n]{c} = 1\). \\
+Voraussetzung: \(c > 0\). \\
+Beweis: Wir werden den Sandwichsatz (S.2.20) nutzen, um die Aussage zu zeigen. Demnach definieren wir zwei Folgen: \((a_n)_{n\ge 1} := (\frac 1 n ^ \frac 1 n)_{n \ge 1}\),\((b_n)_n := (\sqrt[n]{n})_n\) und geben der Folge, wessen Limes gesucht ist den Namen \((x_n)_n\). \\
+Um den Sandwichsatz anwenden zu können werden wir Zeigen, dass für \textbf{fast} (S.2.12) alle \(n \in \mathbb{N}\) gilt, dass \(a_n \le x_n \le b_n\) und dass \(\lim_{n}a_n = \lim_{n}b_n\) wahre Aussagen sind. \\
+Für die zweite Aussage wissen wir nach S.2.28: \(\lim_{n} \sqrt[n]{n} = 1\).\\
+Wir werden zeigen, dass \(\lim_{n} \frac 1 n ^ \frac 1 n = 1\) gilt, betrachte folgende Umformung:
+\begin{flalign*}
+    & \puffer \lim_{n} \frac 1 n ^ \frac 1 n & \text{| Vereinbarung Schreibweise} \\
+    & = \lim_{n} {n ^ {-1}} ^ {\frac 1 n} & \text{| Potenzgesetze} \\
+    & = \lim_{n} {n} ^ {-\frac 1 n} & \text{| Potenzgesetze} \\
+    & = \lim_{n} {n ^ {\frac 1 n}} ^ {-1} & \text{| Schreibweise bzw. Potenzgesetze} \\
+    & = \lim_{n} {\sqrt[n]{n}} ^ {-1} & \text{| Potenzgesetze} \\
+    & = \lim_{n} \frac{1}{\sqrt[n]{n}} & \text{| Präsenzaufgabe 3 und Satz 2.28} \\
+    & = 1
+\end{flalign*}
+Damit gilt nur noch zu zeigen, dass für fast alle \(n \in \mathbb{N}\), \(a_n \le x_n \le b_n\) gilt.\\
+Beobachte, dass wenn \(n = c, \sqrt[n]{n} = \sqrt[n]{c}\) gilt.\\
+Demnach, wenn \(n \ge c \wedge n \ge 1\) gilt, gilt \(\sqrt[n]{n} \ge \sqrt[n]{c}\), da \(n\) steigt und \(c\) konstant ist, \(-\) im Beweis von S.2.28 im Skript wird angesprochen, dass \(\sqrt[n]{\cdot}\) streng monoton steigend ist für \(n \ge 1\) (wir nennen diese Aussage \textbf A). \\
+Somit müssen wir nur noch zeigen, dass \(a_n \le x_n\) in den gegebenen Bedingungen (also, \(n \in \mathbb{N}, n \ge c \wedge n \ge 1\)) für fast alle \(n\) gilt. \\
+Betrachte, dass wenn \(n \ge c\) gilt auch \(\frac{1}{n} \le c\) gilt. Aus \textbf A folgt \(\sqrt[n]{\frac{1}{n}} \le \sqrt[n]{c}\). \\
+Damit beobachten wir für \(n \ge c \wedge n \ge 1\), dass \(a_n \le x_n \le b_n\) gilt, was nach S.2.12 uns genügt, um den Sandwichsatz vollständig anzuwenden. \\
+Da wir \(\lim_{n}a_n = \lim_{n}b_n = 1\) schon gezeigt haben wissen wir, dass \(\lim_{n}a_n = \lim_{n}b_n = 1 = \lim_{n}a_n = \lim_{n}x_n\) gilt. \\
+Also gilt \(\lim_{n}\sqrt[n]{c} = 1\). \qed
 \end{document}
