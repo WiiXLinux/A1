@@ -1,0 +1,42 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[ngerman]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts} 
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcommand*{\qed}{\null\nobreak\hfill\ensuremath{\square}}
+\newcommand*{\puffer}{\text{ }\text{ }\text{ }\text{ }}
+
+\pagestyle{plain}
+\allowdisplaybreaks
+
+\title{Mathematik für die Informatik B - Hausaufgabenserie 2}
+\author{Henri Heyden, Ali Galip Altun \\ \small stu240825, stu242631}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+
+\doublespacing
+
+\section*{Aufgabe 1}
+\textbf{Beh.:} Die Aussage beschrieben in der Aufgabenstellung gilt nicht, das heißt es gilt: \(\exists (x_n)_n,(y_n)_n \in \mathcal{S}(\mathbb R_{\ne 0}), \lim_{n}x_n = \lim_{n}y_n = +\infty: \lim_{n}\frac{x_n}{y_n} \not\in \overline{\mathbb{R}}\) \\
+\textbf{Vor.:} \(n \in \mathbb{N}\). \\
+\textbf{Bew.:} Sei \(a_n := n + n^2 + n^2\cdot(-1)^n\) und \(b_n = n^2\).\\
+Dann gilt: \(\frac{a_n}{b_n} = \frac{n + n^2 + n^2\cdot(-1)^n}{n^2} = \frac{1}{n}+1+(-1)^n\). \\
+Wir werden nun den Limes dieser Folge versuchen zu berechnen. Betrachte folgende Umformung:
+\begin{flalign*}
+    & \lim_{n} \frac{a_n}{b_n} = \lim_{n} \left(\frac{1}{n}+1+(-1)^n\right) & \text{| Kombinationssätze} \\
+    & \puffer \puffer \text{ } = \lim_{n} \frac{1}{n} + \lim_{n} 1 + \lim_{n} (-1)^n & \text{| Ausrechnen} \\
+    & \puffer \puffer \text{ } = 0 + 1 + \lim_{n} (-1)^n & \text{| } \lim_{n} (-1)^n \not \in \overline{\mathbb{R}} \\
+    & \puffer \puffer \text{ } \not\in \overline{\mathbb{R}}.
+\end{flalign*}
+Damit gilt was zu zeigen war, also gilt die Aussage aus der Aufgabenstellung leider nicht. \qed
+\section*{Aufgabe 2}
+
+\end{document}
