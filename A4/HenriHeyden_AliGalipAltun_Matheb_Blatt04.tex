@@ -27,7 +27,7 @@
 \section*{Aufgabe 1}
 \textbf{Beh.:} Die Aussage beschrieben in der Aufgabenstellung gilt nicht, das heißt es gilt: \(\exists (x_n)_n,(y_n)_n \in \mathcal{S}(\mathbb R_{\ne 0}), \lim_{n}x_n = \lim_{n}y_n = +\infty: \lim_{n}\frac{x_n}{y_n} \not\in \overline{\mathbb{R}}\) \\
 \textbf{Vor.:} \(n \in \mathbb{N}\). \\
-\textbf{Bew.:} Sei \(a_n := n + n^2 + n^2\cdot(-1)^n\) und \(b_n = n^2\).\\
+\textbf{Bew.:} Sei \(a_n := n + n^2 + n^2\cdot(-1)^n\) und \(b_n := n^2\).\\
 Dann gilt: \(\frac{a_n}{b_n} = \frac{n + n^2 + n^2\cdot(-1)^n}{n^2} = \frac{1}{n}+1+(-1)^n\). \\
 Wir werden nun den Limes dieser Folge versuchen zu berechnen. Betrachte folgende Umformung:
 \begin{flalign*}
@@ -36,7 +36,22 @@ Wir werden nun den Limes dieser Folge versuchen zu berechnen. Betrachte folgende
     & \puffer \puffer \text{ } = 0 + 1 + \lim_{n} (-1)^n & \text{| } \lim_{n} (-1)^n \not \in \overline{\mathbb{R}} \\
     & \puffer \puffer \text{ } \not\in \overline{\mathbb{R}}.
 \end{flalign*}
-Damit gilt was zu zeigen war, also gilt die Aussage aus der Aufgabenstellung leider nicht. \qed
+Damit gilt was zu zeigen war, also gilt die Aussage aus der Aufgabenstellung nicht. \qed
 \section*{Aufgabe 2}
-
+\textbf{Beh.:} Die Aussage beschrieben in der Aufgabenstellung gilt nicht, das heißt es gilt: \(\exists (x_k)_{k\ge1}\in \mathcal{S}(\mathbb R), \lim_{n}\left(\frac{1}{n} \sum_{k=1}^{n} x_k\right)\in \mathbb R: \lim_n x_k \not\in \mathbb R\). \\
+\textbf{Vor.:} \(n,k \in \mathbb{N}_1\). \\
+\textbf{Bew.:} Sei \(x_k := (-1)^n\). Dann gilt: \(\left(\frac{1}{n} \sum_{k=1}^{n} x_k\right)_n = \left(\frac{1}{n} \sum_{k=1}^{n} (-1)^n)\right)_n\), wir nennen diese Mittelwertsfolge \(m_n\). \\
+Wir werden zeigen, dass \(\lim_n m_n = 0 \in \mathbb R\) gilt.\\
+Wir werden das \(\epsilon\)-Kriterium anwenden, das heißt wir werden zeigen, dass folgendes gilt: \(\forall \epsilon > 0: \exists n_0: \forall n \ge n_0: |m_n - 0| < \epsilon\). Setze \(n_0 := \left\lceil \frac{1}{n} \right\rceil + 1\). Dann gilt \(n_0 \in \mathbb N_1\).
+Sei \(n \ge n_0\). Dann gilt folgende Umformung:
+\begin{flalign*}
+    & |m_n - 0| = |m_n| = \left|\frac{1}{n} \sum_{k=1}^{n} (-1)^n\right| & \text{| } \frac{1}{n} > 0 \\
+    & = \frac{1}{n} \cdot \left|\sum_{k=1}^{n} (-1)^n\right| & \text{| Annahme } n \ge n_0 \text{ und } \frac{1}{n} < n \\
+    & \le \frac{1}{n_0} \cdot \left|\sum_{k=1}^{n_0} (-1)^n\right| & \text{| setze in \(n_0\) ein} \\
+    & = \frac{1}{\left\lceil \frac{1}{n} \right\rceil + 1} \cdot \left|\sum_{k=1}^{n_0} (-1)^n\right| & \text{| Beobachte } max\left\{\left|\sum_{k=1}^{n_0} (-1)^n\right|\right\} = 1 \\
+    & \le \frac{1}{\left\lceil \frac{1}{n} \right\rceil + 1} \cdot 1 = \frac{1}{\left\lceil \frac{1}{n} \right\rceil + 1} \\
+    & < \frac{1}{\frac{1}{\epsilon}} = \epsilon.
+\end{flalign*}
+Somit haben wir gezeigt, dass \(lim_n m_n = 0\) gilt und da \(0 \in \mathbb R\) gilt, konvergiert \((m_n)n\).
+Beobachte aber, dass \((x_k)_k\) nicht konvergiert nach Vorlesung. Damit haben wir gezeigt, was zu zeigen war und die Aussage aus der Aufgabenstellung gilt nicht. \qed
 \end{document}
