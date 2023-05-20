@@ -6,6 +6,8 @@
 \usepackage{setspace}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{titling}
+
 
 \newcommand*{\qed}{\null\nobreak\hfill\ensuremath{\square}}
 \newcommand*{\puffer}{\text{ }\text{ }\text{ }\text{ }}
@@ -15,6 +17,9 @@
 \pagestyle{plain}
 \allowdisplaybreaks
 
+\setlength{\droptitle}{-11em}
+\setlength{\jot}{12pt}
+
 \title{Mathematik für die Informatik B - Hausaufgabenserie 5}
 \author{Henri Heyden, Ali Galip Altun \\ \small stu240825, stu242631}
 \date{}
@@ -23,7 +28,6 @@
 \begin{document}
 \maketitle
 
-\setlength{\jot}{12pt}
 \doublespacing
 
 \section*{Aufgabe 1}
@@ -43,14 +47,30 @@ Nach Satz 2.62 (1) konvergiert die Reihe über \(y\) absolut, wenn \(\lim_{n} \s
 Betrachte folgende Vereinfachung:
 \begin{flalign*}
     & \lim_{n} \sqrt[n]{|y_n|} & \text{| setze ein} \\
-    & = \lim_{n} \sqrt[n]{\left(c \cdot \left(\frac{1}{1 + \frac{1}{n}}\right)^{n+1}\right)^n}
+    & = \lim_{n} \sqrt[n]{\left|\left(c \cdot \left(\frac{1}{1 + \frac{1}{n}}\right)^{n+1}\right)^n \right|} & \text{| löse Wurzel auf, Potenzgesetze}\\
+    & = \lim_{n} \left|c \cdot \left(\frac{1}{1 + \frac{1}{n}}\right)^{n+1} \right| & \text{| Kombinationssätze, Regeln in Beträgen} \\
+    & = \lim_{n} |c| \cdot \lim_{n} \left| \left(\frac{1}{1 + \frac{1}{n}}\right)^{n+1} \right|
 \end{flalign*}
+Nach Satz 2.39 gilt: \(\lim_n \left(1 + \frac{1}{n}\right)^{n+1} \in [2, 4]\) Wir nennen diesen Limes \(d\) \\
+Dann gilt weiterhin, da \(\frac{1}{n}\) stetig ist (Vorlesung):
+\begin{flalign*}
+    & \lim_{n} |c| \cdot \lim_{n} \left| \left(\frac{1}{1 + \frac{1}{n}}\right)^{n+1} \right| & |\left(1 + \frac{1}{n}\right)^{n+1} > 0 \\
+    & = \lim_{n} |c| \cdot \lim_{n} \left(\frac{1}{1 + \frac{1}{n}}\right)^{n+1} & \text{| \(\frac{1}{n}\) stetig} \\
+    & = \lim_{n} |c| \cdot \frac{1}{\lim_{n} \left({1 + \frac{1}{n}}\right)^{n+1}} \\
+    & = \lim_{n} |c| \cdot \frac{1}{d} \\
+    & = |c| \cdot \frac{1}{d}
+\end{flalign*}
+Nun betrachte folgende Überlegegung:\\
+Da \(d \in [2,4]\) gilt, gilt \(\frac{1}{d} \in [\frac{1}{4}, \frac{1}{2}]\). Beobachte \(c \in\ ]-2, 2[\ \ \Longrightarrow\ |c| \in [0, 2[\). \\
+Dann gilt also \(|c| \cdot \frac{1}{d} \in [0, 1[\) und somit außerdem \(|c| \cdot \frac{1}{d} < 1\),\\
+also konvergiert die Reihe über \(y\), was zu zeigen war. \qed
 \section*{Aufgabe 2}
 \textbf{Beh.:} \(M\) ist weder abgeschlossen, noch offen. \\
 \textbf{Vor.:} \(M := \{\frac{1}{n} | n \in \mathbb{N}_1\}\) \\
-\textbf{Bew.:} Wir zeigen, dass nach Vorlesung gilt \(M = ]\ 0,1 ]\ \):\\
+\textbf{Bew.:} Wir zeigen, dass nach Vorlesung gilt \(M =\ ]0,1]\ \):\\
 Da \(\frac{1}{n}\) stetig (Vorlesung) und monoton fallend (Vorlesung) ist, sowie es gilt, dass \(\frac{1}{1} = 1\) gilt und dass \(\lim_{n} \frac{1}{n} = 0\) gilt, obwohl \(\frac{1}{n} \ne 0\) gilt für alle \(n \in \mathbb{N}_1\),
 gilt für alle Werte in M, dass sie kleiner oder gleich 1 sind oder größer als 0 sind, was genau \(]\ 0,1 ]\ \) erfüllt.
 Nach Satz 3.2 gilt damit, dass \(M\) weder abgeschlossen noch offen ist, \gedanke was zu zeigen war. \qed\\
+\\
 Wir haben tatsächlich sowas ähnliches in der Vorlesung auch schon angewendet wurde, um beispielsweise eine Folge zu finden, die seinen Limes nicht annimmt, jedoch trotzdem konvergiert.
 \end{document}
