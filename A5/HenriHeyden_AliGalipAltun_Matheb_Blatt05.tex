@@ -9,6 +9,8 @@
 
 \newcommand*{\qed}{\null\nobreak\hfill\ensuremath{\square}}
 \newcommand*{\puffer}{\text{ }\text{ }\text{ }\text{ }}
+\newcommand*{\gedanke}{\textbf{-- }}
+
 
 \pagestyle{plain}
 \allowdisplaybreaks
@@ -21,15 +23,34 @@
 \begin{document}
 \maketitle
 
-
+\setlength{\jot}{12pt}
 \doublespacing
 
 \section*{Aufgabe 1}
+\textbf{Beh.:} Die Reihe über \(\left(c^n \cdot \left(\frac{n}{n+1}\right)^{n\cdot(n+1)} \right)_{n\ge 1}\) konvergiert absolut.\\
+\textbf{Vor.:} \(n \in \mathbb{N}_{\ge 1}\) \\
+\textbf{Bew.:} Wir nennen ab sofort \((y_n)_{n \ge 1} := \left(c^n \cdot \left(\frac{n}{n+1}\right)^{n\cdot(n+1)} \right)_{n\ge 1}\).\\
+Betrachte folgende Vereinfachung:
+\begin{flalign*}
+    & c^n \cdot \left(\frac{n}{n+1}\right)^{n\cdot(n+1)} & \text{| Potenzgesetze} \\
+    & = c^n \cdot \left(\left(\frac{n}{n+1}\right)^{n+1}\right)^n & \text{| \(c\) hereinziehen} \\
+    & = \left(c \cdot \left(\frac{n}{n+1}\right)^{n+1}\right)^n & \text{| doppelt invertieren} \\
+    & = \left(c \cdot \left(\frac{n+1}{n}\right)^{-n-1}\right)^n & \text{| Bruch vereinfachen} \\
+    & = \left(c \cdot \left(1 + \frac{1}{n}\right)^{-n-1}\right)^n & \text{| doppelt invertieren} \\
+    & = \left(c \cdot \left(\frac{1}{1 + \frac{1}{n}}\right)^{n+1}\right)^n
+\end{flalign*}
+Nach Satz 2.62 (1) konvergiert die Reihe über \(y\) absolut, wenn \(\lim_{n} \sqrt[n]{|y_n|} < 1\) gilt.
+Betrachte folgende Vereinfachung:
+\begin{flalign*}
+    & \lim_{n} \sqrt[n]{|y_n|} & \text{| setze ein} \\
+    & = \lim_{n} \sqrt[n]{\left(c \cdot \left(\frac{1}{1 + \frac{1}{n}}\right)^{n+1}\right)^n}
+\end{flalign*}
 \section*{Aufgabe 2}
 \textbf{Beh.:} \(M\) ist weder abgeschlossen, noch offen. \\
 \textbf{Vor.:} \(M := \{\frac{1}{n} | n \in \mathbb{N}_1\}\) \\
-\textbf{Bew.:} Nach Vorlesung gilt \(M = ]\ 0,1 ]\ \), da \(\frac{1}{n}\) stetig (Vorlesung) und monoton fallend (Vorlesung) ist, sowie es gilt, dass \(\frac{1}{1} = 1\) gilt und dass \(\lim_{n} \frac{1}{n} = 0\) gilt, obwohl \(\frac{1}{n} \ne 0\) gilt für alle \(n \in \mathbb{N}_1\), was in der Vorlesung auch schon angewendet wurde. \\
-Nach Satz 3.2 gilt damit, dass \(M\) weder abgeschlossen noch offen ist,\\
-- was zu zeigen war. \qed
-
+\textbf{Bew.:} Wir zeigen, dass nach Vorlesung gilt \(M = ]\ 0,1 ]\ \):\\
+Da \(\frac{1}{n}\) stetig (Vorlesung) und monoton fallend (Vorlesung) ist, sowie es gilt, dass \(\frac{1}{1} = 1\) gilt und dass \(\lim_{n} \frac{1}{n} = 0\) gilt, obwohl \(\frac{1}{n} \ne 0\) gilt für alle \(n \in \mathbb{N}_1\),
+gilt für alle Werte in M, dass sie kleiner oder gleich 1 sind oder größer als 0 sind, was genau \(]\ 0,1 ]\ \) erfüllt.
+Nach Satz 3.2 gilt damit, dass \(M\) weder abgeschlossen noch offen ist, \gedanke was zu zeigen war. \qed\\
+Wir haben tatsächlich sowas ähnliches in der Vorlesung auch schon angewendet wurde, um beispielsweise eine Folge zu finden, die seinen Limes nicht annimmt, jedoch trotzdem konvergiert.
 \end{document}
