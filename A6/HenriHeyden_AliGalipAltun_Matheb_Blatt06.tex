@@ -17,7 +17,7 @@
 \pagestyle{plain}
 \allowdisplaybreaks
 
-\setlength{\droptitle}{-11em}
+\setlength{\droptitle}{-20em}
 \setlength{\jot}{12pt}
 
 \title{Mathematik für die Informatik B - Hausaufgabenserie 6}
@@ -29,6 +29,21 @@
 \maketitle
 
 \doublespacing
-
-
+\section*{Aufgabe 1}
+\textbf{Beh.:} Die Reihe über \(\left(\frac{c^n}{n!}\right)_n\) konvergiert absolut. \\
+\textbf{Vor.:} \(n \in \mathbb N, c > 0\) \\
+\textbf{Bew.:} Nach dem Quotientenkriterium (Limes-Version) ist zu zeigen, dass \(\lim_{n} \left| \frac{\left(\frac{c^n}{n!}\right)}{\left(\frac{c^{n-1}}{(n-1)!}\right)} \right| < 1\) gilt. \\
+Betrachte hierfür folgende Vereinfachung:
+\begin{flalign*}
+    & \puffer \lim_{n} \left| \frac{\left(\frac{c^n}{n!}\right)}{\left(\frac{c^{n-1}}{(n-1)!}\right)} \right| & \text{| Def. Potenz und Def. Fakultät} \\
+    & = \lim_{n} \left| \frac{\left(\frac{c \cdot c^{n-1}}{n \cdot (n-1)!}\right)}{\left(\frac{c^{n-1}}{(n-1)!}\right)} \right| & \text{| Bruchrechnung} \\
+    & = \lim_{n} \left| \frac{c}{n} \cdot \frac{\left(\frac{c^{n-1}}{(n-1)!}\right)}{\left(\frac{c^{n-1}}{(n-1)!}\right)} \right| & \text{| kürzen} \\
+    & = \lim_{n} \left| \frac{c}{n} \right| & \text{| n > 0, c > 0} \\
+    & = \lim_{n} \frac{c}{n} & \text{| Kombinationssätze, \(\lim_{n} c = c\)} \\
+    & = c \cdot \lim_{n} \frac{1}{n} & \text{| Auswerten} \\
+    & = c \cdot 0 & \\
+    & = 0 & \\
+    & < 1
+\end{flalign*}
+Damit gilt, was zu zeigen war, also konvergiert die Reihe über \(\left(\frac{c^n}{n!}\right)_n\) absolut. \qed
 \end{document}
