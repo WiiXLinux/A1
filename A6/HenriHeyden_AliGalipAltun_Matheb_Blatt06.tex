@@ -31,7 +31,7 @@
 \doublespacing
 \section*{Aufgabe 1}
 \textbf{Beh.:} Die Reihe über \(\left(\frac{c^n}{n!}\right)_n\) konvergiert absolut. \\
-\textbf{Vor.:} \(n \in \mathbb N, c > 0\) \\
+\textbf{Vor.:} \(c > 0\) \\
 \textbf{Bew.:} Nach dem Quotientenkriterium (Limes-Version) ist zu zeigen, dass \(\lim_{n} \left| \frac{\left(\frac{c^n}{n!}\right)}{\left(\frac{c^{n-1}}{(n-1)!}\right)} \right| < 1\) gilt. \\
 Betrachte hierfür folgende Vereinfachung:
 \begin{flalign*}
@@ -48,7 +48,7 @@ Betrachte hierfür folgende Vereinfachung:
 Damit gilt, was zu zeigen war, also konvergiert die Reihe über \(\left(\frac{c^n}{n!}\right)_n\) absolut. \qed
 \section*{Aufgabe 2}
 \textbf{Beh.:} Für zwei stetige Funktionen gilt, dass ihre Summenfunktion auch stetig ist. \\
-\textbf{Vor.:} \(\Omega \subseteq \mathbb{R}\),\puffer\(f,g \in \mathbb{R}^\Omega\) stetig, \puffer \(x \in \mathbb{R}\) beliebig. \\
+\textbf{Vor.:} \(\Omega \subseteq \mathbb{R}\),\puffer\(f,g \in \mathbb{R}^\Omega\) stetig, \puffer \(x \in \mathbb{R}\) beliebig \footnote{(das ist nicht als Turbo-Pascal-Sei gemeint)} \\
 \textbf{Bew.:} Nach Aufgabenstellung werden wir das \(\epsilon\)-\(\delta\)-Kriterium anwenden:\\
 Dann ist zu zeigen: \\
 \(\forall \epsilon > 0: \exists \delta > 0: \forall \xi \in B(x, \delta) \cap \Omega: f(\xi) + g(\xi) \in B(f(x) + g(x), \epsilon)\) \\
@@ -61,8 +61,11 @@ Nach Vorlesung dürfen wir dann auch schreiben: \\
 Dann gilt: \(|f(\xi) - f(x)| + |g(\xi) - g(x)| < \epsilon\). \\
 Nach der Dreieckungleichung gilt:\\
 \(|f(\xi) - f(x)| + |g(\xi) - g(x)| \ge |f(\xi) - f(x) + g(\xi) - g(x)|\). \\
-Damit gilt: \(\forall \epsilon > 0: \exists \delta > 0: \forall \xi \in B(x, \delta) \cap \Omega: |f(\xi) + g(\xi) - f(x) - g(x)|  < \epsilon\) \\
+Damit gilt: \(\forall \epsilon > 0: \exists \delta > 0: \forall \xi \in B(x, \delta) \cap \Omega: |f(\xi) + g(\xi) - f(x) - g(x)|  < \epsilon\). \footnote{(Bei langen prädikatenlogischen Aussagen und Begründungen der Schritte ist es leider etwas schwerer flalign zu verwenden, deswegen sind die Gleichungen dieses Mal etwas verschachtelter.)}
 \gedanke Was zu zeigen war. \qed \\
-\\
-(Bei langen prädikatenlogischen Aussagen und Begründungen der Schritte ist es leider etwas schwerer flalign zu verwenden.)
+\subsection*{Anmerkungen}
+\begin{singlespace}
+    Als wir in der Voraussetzung beider Aufgaben in der vierten Serie schrieben, dass \(n \in \mathbb N\) oder \(n,k \in \mathbb N_1\) gelten, meinten wir nicht, dass wir nur ein n oder k betrachten, sondern, dass diese Aussagen gelten müssen, sodass wir überhaupt den Begriff Folge benutzen dürfen. Schließlich brauchen wir eine Menge von der abgebildet wird auf die Werte der Folge. Dies ist nicht im Widerspruch dazu gemeint, dass n und k nicht laufen, jedoch ist es nötig zu anerkennen, dass n und k auch natürliche Zahlen sind, schließlich gelten die Operationen und Regeln, die wir verwenden für diese Art von Zahlen. Dazu wurden uns direkt 10 Punkte abgezogen, 2 mal 5 Punkte, was alleine schon zu viel ist in meiner Meinung, da es so ein unwichtiger Fehler ist. Wir haben schließlich alles verstanden, -- was ja auch in der Korrektur sogar erwähnt wurde.\\
+    Und selbst nach dem einen Mal 5 Punkte Abzug wird das in der zweiten Aufgabe nicht als Folgefehler anerkannt -- warum auch immer. Folgefehler sind übrigens im Prüfungsrecht verordnet. Das Sarkastische ist zudem auch noch, dass uns gesagt wurde, dass wenn wir beide Voraussetzungen weg gelassen hätten, uns kein Fehler notiert wäre. Für uns bedeutet das jetzt, dass wir eine Serie an Arbeit wegwerfen müssen und da dieser Fehler vielleicht auch in der fünften Serie von uns drin ist, dass wir noch mal mit Punktabzug rechnen müssen.    
+\end{singlespace}
 \end{document}
