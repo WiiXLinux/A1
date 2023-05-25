@@ -46,4 +46,23 @@ Betrachte hierfür folgende Vereinfachung:
     & < 1
 \end{flalign*}
 Damit gilt, was zu zeigen war, also konvergiert die Reihe über \(\left(\frac{c^n}{n!}\right)_n\) absolut. \qed
+\section*{Aufgabe 2}
+\textbf{Beh.:} Für zwei stetige Funktionen gilt, dass ihre Summenfunktion auch stetig ist. \\
+\textbf{Vor.:} \(\Omega \subseteq \mathbb{R}\),\puffer\(f,g \in \mathbb{R}^\Omega\) stetig, \puffer \(x \in \mathbb{R}\) beliebig. \\
+\textbf{Bew.:} Nach Aufgabenstellung werden wir das \(\epsilon\)-\(\delta\)-Kriterium anwenden:\\
+Dann ist zu zeigen: \\
+\(\forall \epsilon > 0: \exists \delta > 0: \forall \xi \in B(x, \delta) \cap \Omega: f(\xi) + g(\xi) \in B(f(x) + g(x), \epsilon)\) \\
+Dies ist äquivalent zu:\\
+\(\forall \epsilon > 0: \exists \delta > 0: \forall \xi \in B(x, \delta) \cap \Omega: |f(\xi) + g(\xi) - f(x) - g(x)|  < \epsilon\) \\
+Nach Vorrausetzung gilt unter den betrachteten Quantor-Vorsätzen: \\
+\(|f(\xi) - f(x)| < \epsilon\) und \(|g(\xi) - g(x)| < \epsilon\). \\
+Nach Vorlesung dürfen wir dann auch schreiben: \\
+\(|f(\xi) - f(x)| < \frac\epsilon 2\) und \(|g(\xi) - g(x)| < \frac\epsilon 2\) \\
+Dann gilt: \(|f(\xi) - f(x)| + |g(\xi) - g(x)| < \epsilon\). \\
+Nach der Dreieckungleichung gilt:\\
+\(|f(\xi) - f(x)| + |g(\xi) - g(x)| \ge |f(\xi) - f(x) + g(\xi) - g(x)|\). \\
+Damit gilt: \(\forall \epsilon > 0: \exists \delta > 0: \forall \xi \in B(x, \delta) \cap \Omega: |f(\xi) + g(\xi) - f(x) - g(x)|  < \epsilon\) \\
+\gedanke Was zu zeigen war. \qed \\
+\\
+(Bei langen prädikatenlogischen Aussagen und Begründungen der Schritte ist es leider etwas schwerer flalign zu verwenden.)
 \end{document}
