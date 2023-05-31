@@ -45,7 +45,7 @@ Gelte \(n \in odd\) ließe sich \(n\) schreiben als \(2a + 1\) für \(a \in \mat
     & \puffer \text{ } \text{ } \text{ } = \sqrt{x} \cdot x^a \\
 \end{flalign*}
 Dann gilt: \(f_n(x)' = \frac{1}{2\sqrt{x}} \cdot x^a + \sqrt{x} \cdot ax^{a-1}\) nach der Ableitung der Wurzel (3.45), der Ableitung eines Polynoms (3.42) und der Produktregel (3.41). \\
-Bemerke, dass gilt: \(\lim_{x \rightarrow 0} f_n(x)' = +\infty\) gilt, und somit konvergiert der Differenzenquotient von \(f_n\) nicht an der Stelle 0, womit \(f_n\) an dieser Stelle für \(n \in odd\) nicht differenzierbar ist. \\
+Bemerke, dass gilt: \(\lim_{x \rightarrow 0} f_n(x)' = +\infty\) gilt (folgt aus den Kombinationssätzen), und somit konvergiert der Differenzenquotient von \(f_n\) nicht an der Stelle 0, womit \(f_n\) an dieser Stelle für \(n \in odd\) nicht differenzierbar ist. \\
 \(x = 0\) ist die einzige Stelle bei der \(f_n\) nicht differenzierbar ist, da für \(x > 0\), \(f_n(x)' \in \mathbb{R}\) gilt, was aus den verwendeten Operationen in \(f_n(x)'\) folgt.
 \subsection*{Zweiter Fall: B}
 Gelte \(n \in even_1\) ließe sich \(n\) schreiben als \(2a\) für \(a \in \mathbb{N}_1\). Dann gelte für \(f_n\) folgendes:
@@ -57,4 +57,29 @@ Gelte \(n \in even_1\) ließe sich \(n\) schreiben als \(2a\) für \(a \in \math
 Nach der Ableitung eines Polynoms (3.42) ist dann \(f_n\) in jeder Stelle differenzierbar mit \(f_n(x)' = a \cdot x^{a-1}\) für \(n \in even_1\). \\ \\
 Aus beiden Fallunterscheidungen folgt somit, dass für \(n \in even_1\) ist \(f\) differenzierbar und für \(n \in odd\) ist \(f\) differenzierbar für alle \(x > 0\), \\
 \gedanke was zu zeigen war. \qed
+\section*{Aufgabe 3}
+\textbf{Beh.:} Die Aussage aus der Aufgabenstellung gilt nicht, das heißt es existieren \(a,b \in \mathbb{R}\) und \(f: [a,+\infty] \rightarrow [b,+\infty]\) so, dass \(f\) differenzierbar und streng monoton steigend ist und gleichzeitig \(\lim_{x \rightarrow +\infty} f(x) \ne +\infty\) gilt. \\
+\textbf{Vor.:} \(a = b = 0\), \(f: [a,+\infty] \rightarrow [b,+\infty], x \mapsto \frac{x}{x+1}\) \\
+\textbf{Bew.:} Nach Satz 3.42 können wir eine rationale Funktion wie unser \(f\) ableiten. Hierfür wenden wir ein mal den Quotenentensatz an und bekommen \(f(x)' = \frac{1}{(x+1)^2}\). Dies macht \(f\) differenzierbar in jedem Punkt, denn schließlich gilt für jedes \(x\) aus unserer Domain (\(x \ge 0\)), dass der untere Term der Ableitung nicht 0 werden kann und sonst nimmt die Ableitung auch nur Werte aus \(\mathbb{R}\) an.\\
+Nun zeigen wir noch, dass \(f\) auch streng monoton steigend ist.\\
+Nach dem Monotoniekriterum in Satz 3.53 zeigen wir, dass für \(f\) im Intervall ihrer Domain ihre Ableitung nur Positive Werte annimmt. \\
+Wir zeigen also: \(\forall x \ge 0: f(x)' > 0\). Betrachte folgende Beobachtung: \\
+Gilt \(x \ge 0\), dann gilt \(x + 1 > 0\). Dann folgt aus den Regeln in angeordneten Körpern, dass \((x + 1)^2 > 0\) gilt und daraus, dass \(\frac{1}{(x+1)^2} > 0\) gilt. \\
+Somit gilt: \(\forall x \ge 0: f(x)' > 0\), also ist \(f\) streng monoton steigend. \\
+Nun haben wir alle Voraussetzungen (der Aufgabenstellung) erfüllt, also werden wir zeigen, dass \(\lim_{x \rightarrow +\infty} f(x) \ne +\infty\) für unseres \(f\) gilt. \pagebreak \\
+Betrachte somit folgende Auflösung des Limetes\footnote{Die Gleichheit beim ersten Schritt sieht man leicht, indem man beide Seiten von \(\frac{x}{x+1} = 1 - \frac{1}{x+1}\) mit \(x+1\) multipliziert. Der Fall \(x = -1\) tritt unter unseren Bedingungen nicht auf}:
+\begin{flalign*}
+    & \lim_{x \rightarrow +\infty} f(x) = \lim_{x \rightarrow +\infty} \frac{x}{x+1} & \text{| Bruchrechnung} \\
+    & \puffer \puffer \puffer \text{ } \text{ } = \lim_{x \rightarrow +\infty} \left(1 - \frac{1}{x+1}\right) & \text{| Kombinationssätze} \\
+    & \puffer \puffer \puffer \text{ } \text{ } = \lim_{x \rightarrow +\infty} 1 - \lim_{x \rightarrow +\infty} \frac{1}{x+1} & \text{| Stetigkeit von \(\frac{1}{x}\), auswerten} \\
+    & \puffer \puffer \puffer \text{ } \text{ } = 1 - \frac{1}{\lim_{x \rightarrow +\infty} {x+1}} & \text{| Kombinationssatz, auswerten, Schreibweise} \\
+    & \puffer \puffer \puffer \text{ } \text{ } = 1 - \frac{1}{{+\infty + 1}} & \text{| Schreibweise} \\
+    & \puffer \puffer \puffer \text{ } \text{ } = 1 - \frac{1}{{+\infty}} & \text{| Auswerten} \\
+    & \puffer \puffer \puffer \text{ } \text{ } = 1 - 0 \\
+    & \puffer \puffer \puffer \text{ } \text{ } = 1
+\end{flalign*}
+Da \(1 \ne +\infty\) gilt, ist somit gezeigt, was zu zeigen war. \qed \\ \\
+\begin{singlespace}
+Ich hab noch eine kleine Frage zu \LaTeX: Man sieht im vierten Schritt unserer Auswertung in den Schrittbegründungen, dass es eng wird. Die Fußnote 1 hätte ich auch eigentlich lieber in die Umformung selbst gebracht, aber der Platz geht aus. Die wäre kein Problem, wenn es Zeilenumbrüche gäbe in flalign*, aber es scheint nicht so, da die Elemente sonst "von dem Blatt rutschen". Gibt es hierfür eine elegante Lösung? Ich benutze TeX Live.
+\end{singlespace}
 \end{document}
