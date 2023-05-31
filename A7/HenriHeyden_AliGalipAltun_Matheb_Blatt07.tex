@@ -63,16 +63,16 @@ Aus beiden Fallunterscheidungen folgt somit, dass für \(n \in even_1\) ist \(f\
 \textbf{Bew.:} Nach Satz 3.42 können wir eine rationale Funktion wie unser \(f\) ableiten. Hierfür wenden wir ein mal den Quotenentensatz an und bekommen \(f(x)' = \frac{1}{(x+1)^2}\). Dies macht \(f\) differenzierbar in jedem Punkt, denn schließlich gilt für jedes \(x\) aus unserer Domain (\(x \ge 0\)), dass der untere Term der Ableitung nicht 0 werden kann und sonst nimmt die Ableitung auch nur Werte aus \(\mathbb{R}\) an.\\
 Nun zeigen wir noch, dass \(f\) auch streng monoton steigend ist.\\
 Nach dem Monotoniekriterum in Satz 3.53 zeigen wir, dass für \(f\) im Intervall ihrer Domain ihre Ableitung nur Positive Werte annimmt. \\
-Wir zeigen also: \(\forall x \ge 0: f(x)' > 0\). Betrachte folgende Beobachtung: \\
-Gilt \(x \ge 0\), dann gilt \(x + 1 > 0\). Dann folgt aus den Regeln in angeordneten Körpern, dass \((x + 1)^2 > 0\) gilt und daraus, dass \(\frac{1}{(x+1)^2} > 0\) gilt. \\
-Somit gilt: \(\forall x \ge 0: f(x)' > 0\), also ist \(f\) streng monoton steigend. \\
-Nun haben wir alle Voraussetzungen (der Aufgabenstellung) erfüllt, also werden wir zeigen, dass \(\lim_{x \rightarrow +\infty} f(x) \ne +\infty\) für unseres \(f\) gilt. \pagebreak \\
+Wir zeigen also: \(\forall x > 0: f(x)' > 0\). Betrachte folgende Beobachtung: \\
+Gilt \(x > 0\), dann gilt \(x + 1 > 0\). Dann folgt aus den Regeln in angeordneten Körpern, dass \((x + 1)^2 > 0\) gilt und daraus, dass \(\frac{1}{(x+1)^2} > 0\) gilt. \\
+Somit gilt: \(\forall x > 0: f(x)' > 0\), also ist \(f\) streng monoton steigend. \\
+Nun haben wir alle Voraussetzungen (der Aufgabenstellung) erfüllt, also werden wir zeigen, dass \(\lim_{x \rightarrow +\infty} f(x) \ne +\infty\) für unser \(f\) gilt. \pagebreak \\
 Betrachte somit folgende Auflösung des Limetes\footnote{Die Gleichheit beim ersten Schritt sieht man leicht, indem man beide Seiten von \(\frac{x}{x+1} = 1 - \frac{1}{x+1}\) mit \(x+1\) multipliziert. Der Fall \(x = -1\) tritt unter unseren Bedingungen nicht auf}:
 \begin{flalign*}
     & \lim_{x \rightarrow +\infty} f(x) = \lim_{x \rightarrow +\infty} \frac{x}{x+1} & \text{| Bruchrechnung} \\
     & \puffer \puffer \puffer \text{ } \text{ } = \lim_{x \rightarrow +\infty} \left(1 - \frac{1}{x+1}\right) & \text{| Kombinationssätze} \\
-    & \puffer \puffer \puffer \text{ } \text{ } = \lim_{x \rightarrow +\infty} 1 - \lim_{x \rightarrow +\infty} \frac{1}{x+1} & \text{| Stetigkeit von \(\frac{1}{x}\), auswerten} \\
-    & \puffer \puffer \puffer \text{ } \text{ } = 1 - \frac{1}{\lim_{x \rightarrow +\infty} {x+1}} & \text{| Kombinationssatz, auswerten, Schreibweise} \\
+    & \puffer \puffer \puffer \text{ } \text{ } = \lim_{x \rightarrow +\infty} 1 - \lim_{x \rightarrow +\infty} \frac{1}{x+1} & \text{| Stetigkeit von \(\frac{1}{x+1}\) für \(x \ge 0\)} \\
+    & \puffer \puffer \puffer \text{ } \text{ } = 1 - \frac{1}{\lim_{x \rightarrow +\infty} (x+1)} & \text{| Kombinationssatz, auswerten, Schreibweise} \\
     & \puffer \puffer \puffer \text{ } \text{ } = 1 - \frac{1}{{+\infty + 1}} & \text{| Schreibweise} \\
     & \puffer \puffer \puffer \text{ } \text{ } = 1 - \frac{1}{{+\infty}} & \text{| Auswerten} \\
     & \puffer \puffer \puffer \text{ } \text{ } = 1 - 0 \\
