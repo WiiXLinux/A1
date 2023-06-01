@@ -57,6 +57,27 @@ Gelte \(n \in even_1\) ließe sich \(n\) schreiben als \(2a\) für \(a \in \math
 Nach der Ableitung eines Polynoms (3.42) ist dann \(f_n\) in jeder Stelle differenzierbar mit \(f_n(x)' = a \cdot x^{a-1}\) für \(n \in even_1\). \\ \\
 Aus beiden Fallunterscheidungen folgt somit, dass für \(n \in even_1\) ist \(f\) differenzierbar und für \(n \in odd\) ist \(f\) differenzierbar für alle \(x > 0\), \\
 \gedanke was zu zeigen war. \qed
+\section*{Aufgabe 2}
+\textbf{Beh.:} Sei \(\Omega \subseteq \mathbb R\) und \(f : \Omega \rightarrow \mathbb R\) und \(x \in \Omega\) ein HP von \(\Omega\). Dann gilt: \\
+\(f\) ist differenzierbar \textbf{(1)} \\
+\(\Longleftrightarrow \exists q \in \mathbb{R}^\Omega, q\) ist stetig in \(x: \forall \xi \in \Omega:f(\xi) = f(x) + q(\xi)\cdot(\xi - x)\) \textbf{(2)}\\
+\textbf{Bew.:} Um die Äquivalenz beider Aussagen zu zeigen, werden wir den Beweis aufteilen in die Richtungen \textbf{(1) \(\Longrightarrow\) (2)} und \textbf{(2) \(\Longrightarrow\) (1)}.
+\subsection*{Richtung (1) \(\Longrightarrow\) (2)}
+Blablabla
+\subsection*{Richtung (2) \(\Longrightarrow\) (1)}
+Sei also angenommen: \(q\) ist stetig in \(x\) und es gilt: \(f(\xi) = f(x) + q(\xi)\cdot(\xi - x)\). \\
+Betrachte folgende Umformung:
+\begin{flalign*}
+    & \puffer \text{ } \text{ } \text{ } f(\xi) = f(x) + q(\xi)\cdot(\xi - x) & \text{| \(-f(x)\)} \\
+    & \Longleftrightarrow f(\xi) - f(x) = q(\xi)\cdot(\xi - x) & \text{| \(\cdot \frac{1}{\xi - x}\), angenommen \(x \ne \xi\)} \\
+    & \Longleftrightarrow \frac{f(\xi) - f(x)}{\xi - x} = q(\xi) \\
+    & \Longrightarrow \lim_{\xi \rightarrow x}\frac{f(\xi) - f(x)}{\xi - x} = \lim_{\xi \rightarrow x}q(\xi) & \text{| q ist stetig in \(x\)} \\
+    & \Longleftrightarrow \lim_{\xi \rightarrow x}\frac{f(\xi) - f(x)}{\xi - x} = q(x) \in \mathbb{R}
+\end{flalign*}
+Also liegt der Differenzenquotient von \(f(x)\) in \(\mathbb R\). Somit ist \(f\) differenzierbar in jedem \(x\). \\
+Angenommen \(x = \xi\) gilt, dann können wir zwar beide Seiten nicht durch \(\xi - x\) teilen und dieser Beweis funktioniert nicht. Beobachte aber, dass wenn \(\xi\), \(x\) annähert es trotzdem funktioniert, schließlich ist der Differenzenquotient so definiert, dass wir durch \(\xi - x\) teilen -- eine Summe, die sich an 0 annähert. \\
+Somit gilt unserer Beweis annähernd für \(\xi - x \rightarrow 0\), jedoch nicht für \(\xi - x = 0\). \\ \\
+Insgesamt sind nun beide Richtungen gezeigt, das heißt es gilt was zu zeigen war. \qed
 \section*{Aufgabe 3}
 \textbf{Beh.:} Die Aussage aus der Aufgabenstellung gilt nicht, das heißt es existieren \(a,b \in \mathbb{R}\) und \(f: [a,+\infty] \rightarrow [b,+\infty]\) so, dass \(f\) differenzierbar und streng monoton steigend ist und gleichzeitig \(\lim_{x \rightarrow +\infty} f(x) \ne +\infty\) gilt. \\
 \textbf{Vor.:} \(a = b = 0\), \(f: [a,+\infty] \rightarrow [b,+\infty], x \mapsto \frac{x}{x+1}\) \\
@@ -66,7 +87,7 @@ Nach dem Monotoniekriterum in Satz 3.53 zeigen wir, dass für \(f\) im Intervall
 Wir zeigen also: \(\forall x > 0: f(x)' > 0\). Betrachte folgende Beobachtung: \\
 Gilt \(x > 0\), dann gilt \(x + 1 > 0\). Dann folgt aus den Regeln in angeordneten Körpern, dass \((x + 1)^2 > 0\) gilt und daraus, dass \(\frac{1}{(x+1)^2} > 0\) gilt. \\
 Somit gilt: \(\forall x > 0: f(x)' > 0\), also ist \(f\) streng monoton steigend. \\
-Nun haben wir alle Voraussetzungen (der Aufgabenstellung) erfüllt, also werden wir zeigen, dass \(\lim_{x \rightarrow +\infty} f(x) \ne +\infty\) für unser \(f\) gilt. \pagebreak \\
+Nun haben wir alle Voraussetzungen (der Aufgabenstellung) erfüllt, also werden wir zeigen, dass \(\lim_{x \rightarrow +\infty} f(x) \ne +\infty\) für unser \(f\) gilt. \\
 Betrachte somit folgende Auflösung des Limetes\footnote{Die Gleichheit beim ersten Schritt sieht man leicht, indem man beide Seiten von \(\frac{x}{x+1} = 1 - \frac{1}{x+1}\) mit \(x+1\) multipliziert. Der Fall \(x = -1\) tritt unter unseren Bedingungen nicht auf}:
 \begin{flalign*}
     & \lim_{x \rightarrow +\infty} f(x) = \lim_{x \rightarrow +\infty} \frac{x}{x+1} & \text{| Bruchrechnung} \\
