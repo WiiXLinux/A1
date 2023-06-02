@@ -71,17 +71,17 @@ Definiere eine weitere Funktion:\\
 \(q: \Omega \rightarrow \mathbb R, \xi \mapsto
 \begin{small}
     \begin{cases}
-        \frac{h(\xi)}{\tilde{h(\xi)}} & \xi \ne x \\
+        \frac{h(\xi)}{\tilde{h}(\xi)} & \xi \ne x \\
         f'(x) & \xi = x
     \end{cases}    
 \end{small}
 \) \\
 Zuerst zeigen wir, dass \(q\), wenn \(\xi \ne x\) gilt, stetig ist in \(\xi\). \\
-Wenn \(\xi \ne x\) gilt, kann \(\frac{h(\xi)}{\tilde{h(\xi)}}\) nicht undefiniert sein, also könnte sie stetig sein. \\
+Wenn \(\xi \ne x\) gilt, kann \(\frac{h(\xi)}{\tilde{h}(\xi)}\) nicht undefiniert sein, also könnte sie stetig sein. \\
 Da \(h\) und \(\tilde{h}\) stetig sind, ist nach Satz 3.20 \(q\) auch stetig in \(\xi\) im Fall \(\xi \ne x\). \\
 Dann gilt für alle \(\xi \ne x\) folgendes:
 \begin{flalign*}
-    & q(\xi) = \frac{h(\xi)}{\tilde{h(\xi)}} & \text{| Einsetzen} \\
+    & q(\xi) = \frac{h(\xi)}{\tilde{h}(\xi)} & \text{| Einsetzen} \\
     & q(\xi) = \frac{f(\xi) - f(x)}{\xi - x} & \text{| \(\cdot (\xi - x)\)} \\
     & \Longleftrightarrow q(\xi) \cdot (\xi - x) = f(\xi) - f(x) & \text{| \(+ f(x)\)} \\
     & \Longleftrightarrow f(\xi) = f(x) + q(\xi) \cdot (\xi - x)
