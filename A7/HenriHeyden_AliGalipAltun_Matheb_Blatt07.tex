@@ -63,9 +63,39 @@ Aus beiden Fallunterscheidungen folgt somit, dass für \(n \in even_1\) ist \(f\
 \(\Longleftrightarrow \exists q \in \mathbb{R}^\Omega, q\) ist stetig in \(x: \forall \xi \in \Omega:f(\xi) = f(x) + q(\xi)\cdot(\xi - x)\) \textbf{(2)}\\
 \textbf{Bew.:} Um die Äquivalenz beider Aussagen zu zeigen, werden wir den Beweis aufteilen in die Richtungen \textbf{(1) \(\Longrightarrow\) (2)} und \textbf{(2) \(\Longrightarrow\) (1)}.
 \subsection*{Richtung (1) \(\Longrightarrow\) (2)}
-Blablabla
+Sei also angenommen: \(\lim_{\xi \rightarrow x} \frac{f(\xi) - f(x)}{\xi - x} \in \mathbb{R}\).\\
+Wir wissen nach Satz 3.36, dass hiermit \(f\) stetig ist. \\
+Definiere folgende Funktionen:\\
+\(h: \Omega \rightarrow \mathbb R, \xi \mapsto f(\xi) - f(x)\) und \(\tilde{h}: \Omega \rightarrow \mathbb R, \xi \mapsto \xi - x\). Dann sind \(h\) und \(\tilde{h}\) stetig in \(x\) nach Satz 3.20 und der Differenzierbarkeit von Polynomen. \\
+Definiere eine weitere Funktion:\\
+\(q: \Omega \rightarrow \mathbb R, \xi \mapsto
+\begin{small}
+    \begin{cases}
+        \frac{h(\xi)}{\tilde{h(\xi)}} & \xi \ne x \\
+        f'(x) & \xi = x
+    \end{cases}    
+\end{small}
+\) \\
+Zuerst zeigen wir, dass \(q(\xi)\) für alle \(\xi \ne x\) stetig ist. \\
+Wenn \(\xi \ne x\) gilt, kann \(\frac{h(\xi)}{\tilde{h(\xi)}}\) nicht undefiniert sein, also könnte sie stetig sein. \\
+Da \(h\) und \(\tilde{h}\) stetig sind, ist nach Satz 3.20 \(q\) auch stetig im Fall \(\xi \ne x\). \\
+Dann gilt für alle \(\xi \ne x\) folgendes:
+\begin{flalign*}
+    & q(\xi) = \frac{h(\xi)}{\tilde{h(\xi)}} & \text{| Einsetzen} \\
+    & q(\xi) = \frac{f(\xi) - f(x)}{\xi - x} & \text{| \(\cdot (\xi - x)\)} \\
+    & \Longleftrightarrow q(\xi) \cdot (\xi - x) = f(\xi) - f(x) & \text{| \(+ f(x)\)} \\
+    & \Longleftrightarrow f(\xi) = f(x) + q(\xi) \cdot (\xi - x)
+\end{flalign*}
+Somit erfüllt \(q\) für \(\xi \ne x\) die gewünschten Eigenschaften: \textbf{(2)}. \\
+Betrachte somit den anderen Fall: Wir zeigen, dass \(q(\xi)\) für \(\xi = x\) stetig ist und dann auch die anderen Eigenschaften von \textbf{(2)} gelten. \\
+Wenn \(\xi = x\) gilt, gilt folgendes: \[\lim_{\xi \rightarrow x}q(x) = \lim_{\xi \rightarrow x} \frac{f(\xi) - f(x)}{\xi - x} = f'(x) = q(\xi) = q(x)\]
+Dies macht \(q\) stetig in \(x\). \\
+Des Weiteren gilt dann auch \[f(\xi) = q(\xi) \cdot (\xi - x) + f(x)\]
+da \(f(\xi) = f(x)\) und \(\xi - x = 0\) gelten. \\ \\
+Also gilt für \(\xi = x\) die Aussage \textbf{(2)} \\
+Somit gilt für alle \(\xi \in \Omega\) die Aussage \textbf{(2)} und diese Richtung ist abgeschlossen. \pagebreak
 \subsection*{Richtung (2) \(\Longrightarrow\) (1)}
-Sei also angenommen: \(q\) ist stetig in \(x\) und es gilt: \(f(\xi) = f(x) + q(\xi)\cdot(\xi - x)\). \\
+Sei also angenommen: \(q\) ist stetig in \(x\) und es gilt: \(f(\xi) = f(x) + q(\xi)\cdot(\xi - x)\), \(\xi \ne x\). \footnote{Zum Fall \(\xi = x\) sagen wir gleich noch etwas} \\
 Betrachte folgende Umformung:
 \begin{flalign*}
     & \puffer \text{ } \text{ } \text{ } f(\xi) = f(x) + q(\xi)\cdot(\xi - x) & \text{| \(-f(x)\)} \\
@@ -74,8 +104,8 @@ Betrachte folgende Umformung:
     & \Longrightarrow \lim_{\xi \rightarrow x}\frac{f(\xi) - f(x)}{\xi - x} = \lim_{\xi \rightarrow x}q(\xi) & \text{| q ist stetig in \(x\)} \\
     & \Longleftrightarrow \lim_{\xi \rightarrow x}\frac{f(\xi) - f(x)}{\xi - x} = q(x) \in \mathbb{R}
 \end{flalign*}
-Also liegt der Differenzenquotient von \(f(x)\) in \(\mathbb R\). Somit ist \(f\) differenzierbar in jedem \(x\). \\
-Angenommen \(x = \xi\) gilt, dann können wir beide Seiten nicht durch \(\xi - x\) teilen und dieser Beweis funktioniert nicht. Uns wurde in einer Präsenzübung sogar gesagt, dass das dann überhaupt nicht gilt. Deswegen würde ich argumentieren, dass wir \(\xi\) so beschränken, dass es nicht \(x\) sein darf. Die Begründung aus der Präsenzübung warum \(x = \xi\) nicht gelten darf war, dass dann für ein Folgenglied von einer Folge \((\xi_n)_n\), \(\xi_n = x\) gelte, was jedoch nicht sein darf, wenn wir einen Funktionslimes betrachten wollen, der etwas für die Differenzierbarkeit aussagen soll, wie bei der Definition von Differenzierbarkeit im Skript. \\ Diese Begründung sehen wir ein und sind deswegen davon überzeugt, dass das, was zu zeigen ist, für alle \(\xi \in \Omega \setminus \{x\}\) gelten müsse. \\ \\
+Also liegt der Differenzenquotient von \(f(x)\) in \(\mathbb R\). Somit ist \(f\) differenzierbar in \(x\). \\
+Angenommen \(x = \xi\) gilt, dann können wir beide Seiten nicht durch \(\xi - x\) teilen und dieser Beweis funktioniert nicht. Uns wurde in einer Präsenzübung sogar gesagt, dass das dann überhaupt nicht gilt. Deswegen würde ich argumentieren, dass wir \(\xi\) so beschränken, dass es nicht \(x\) sein darf. Die Begründung aus der Präsenzübung warum \(x = \xi\) nicht gelten darf war, dass dann für ein Folgenglied von einer Folge \((\xi_n)_n\), \(\xi_n = x\) gelte, was jedoch nicht sein darf, wenn wir einen Funktionslimes betrachten wollen, der etwas für die Differenzierbarkeit aussagen soll, wie bei der Definition von Differenzierbarkeit im Skript. \\ Diese Begründung sehen wir ein und sind deswegen davon überzeugt, dass \textbf{(2) \(\Longrightarrow\) (1)}, \textbf{nur} für alle \(\xi \in \Omega \setminus \{x\}\) gelten kann.\footnote{Wir haben in der Behauptung dieses Beweises die Aussage nicht bearbeitet, da wir nicht für Verwirrung sorgen wollten.} \\ \\
 Insgesamt sind nun beide Richtungen gezeigt, das heißt es gilt was zu zeigen war. \qed
 \section*{Aufgabe 3}
 \textbf{Beh.:} Die Aussage aus der Aufgabenstellung gilt nicht, das heißt es existieren \(a,b \in \mathbb{R}\) und \(f: [a,+\infty] \rightarrow [b,+\infty]\) so, dass \(f\) differenzierbar und streng monoton steigend ist und gleichzeitig \(\lim_{x \rightarrow +\infty} f(x) \ne +\infty\) gilt. \\
@@ -98,7 +128,7 @@ Betrachte somit folgende Auflösung des Limetes\footnote{Die Gleichheit beim ers
     & \puffer \puffer \puffer \text{ } \text{ } = 1 - 0 \\
     & \puffer \puffer \puffer \text{ } \text{ } = 1
 \end{flalign*}
-Da \(1 \ne +\infty\) gilt, ist somit gezeigt, was zu zeigen war. \qed \\ \\
+Da \(1 \ne +\infty\) gilt, ist somit gezeigt, was zu zeigen war. \qed \pagebreak
 \begin{singlespace}
 Ich hab noch eine kleine Frage zu \LaTeX: Man sieht im vierten Schritt unserer Auswertung in den Schrittbegründungen, dass es eng wird. Die Fußnote 1 hätte ich auch eigentlich lieber in die Umformung selbst gebracht, aber der Platz geht aus. Die wäre kein Problem, wenn es Zeilenumbrüche gäbe in flalign*, aber es scheint nicht so, da die Elemente sonst "von dem Blatt rutschen". Gibt es hierfür eine elegante Lösung? Ich benutze TeX Live.
 \end{singlespace}
