@@ -1,0 +1,52 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[ngerman]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts} 
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titling}
+
+
+\newcommand*{\qed}{\null\nobreak\hfill\ensuremath{\square}}
+\newcommand*{\puffer}{\text{ }\text{ }\text{ }\text{ }}
+\newcommand*{\gedanke}{\textbf{-- }}
+
+
+\pagestyle{plain}
+\allowdisplaybreaks
+
+\setlength{\droptitle}{-11em}
+\setlength{\jot}{12pt}
+
+\title{Mathematik für die Informatik B - Hausaufgabenserie 8}
+\author{Henri Heyden, Ali Galip Altun \\ \small stu240825, stu242631}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\doublespacing
+
+\section*{Aufgabe 1}
+\textbf{Vor.:} \\
+\textbf{Beh.:} \\
+\textbf{Bew.:}
+\section*{Aufgabe 2}
+\textbf{Vor.:} \\
+\textbf{Beh.:} \\
+\textbf{Bew.:}
+\section*{Aufgabe 3}
+\textbf{Vor.:} \((x_n)_n \in \mathcal{S}(\mathbb{R})\) beliebig, sodass \(\lim_{n}(x_{n+1} - x_n ) = 0\) gilt. \\
+\textbf{Beh.:} \(\lim_{n} x_n \in \mathbb{R}\) \\
+\textbf{Bew.:} Die Aussage zeigen wir indirekt, dass heißt, wir werden in den Fällen \(\lim_n x_n \in \{+\infty, -\infty\}\) und \(\lim_n x_n \not\in \mathbb{R}\) die Aussage \(\lim_{n} (x_{n+1} - x_n) = 0\) ad absurdum führen. \\
+Betrachte folgende Überlegung: \\
+Wenn \(\lim_{n} x_n \in \{+\infty, -\infty\}\) gilt, bedeutet das, dass ab einen bestimmten Punkt, \((x_n)_n\) streng monoton steigend bzw. streng monoton fallend sein muss. Dies folgt aus Satz 2.20c) bzw. Satz 2.20d). Dies bedeutet aber auch, dass zwischen einer Folgenkomponente und einer weiteren Folgenkomponente bis ins Unendliche ab diesen Punkt eine positive bzw. negative Differenz existiert. \\
+Diese Differenz kann kleiner oder größer werden, aber sie wird wegen der Monotonie keinen Vorzeichenwechsel mehr vollbringen oder wird sie jemals Null sein. Würde sich die Differenz an Null annähern, konvergiere \((x_n)_n\) in \(\mathbb R\), was ein Widerspruch zur Annahme wäre. \\
+Somit kann im Fall \(\lim_{n} x_n \in \{+\infty, -\infty\}\), \(\lim_{n}(x_{n+1} - x_n ) = 0\) nicht gelten. \\
+Im Fall, dass \((x_n)_n\) unbestimmt divergiert, kann die Differenz zwischen \(x_n\) und \(x_{n+1}\) nicht bestimmt gegen null konvergieren, da sonst eine Umgebung von null existieren würde, in welcher sich die Differenz aller Folgepartner ab eines bestimmten Punktes aufhalten würde. Dies impliziert die Existenz eines Limes der Folge \((x_n)_n\), da somit eine Kugel mit Radius der Differenz um einen Punkt existieren würde, welche jegliche Folgekomponenten nicht mehr verlassen könnten ab einem bestimmten \(n_0\). Somit wäre dann der Limes der Folge \((x_n)_n\) genau der eben erwähnte Punkt, nach der Definition des Limes. \\
+Dies ist ein Widerspruch zur Annahme, dass \((x_n)_n\) unbestimmt divergiert, also kann \((x_n)_n\) nicht unbestimmt divergieren. \\
+Insgesamt sind nun beide Fälle des Oberfalls \((x_n)_n\) divergiert geklärt, also kann \((x_n)_n\) nur konvergieren, was zu zeigen war. \qed
+\end{document}
