@@ -31,9 +31,32 @@
 \doublespacing
 
 \section*{Aufgabe 1}
-\textbf{Vor.:} \\
-\textbf{Beh.:} \\
-\textbf{Bew.:}
+\textbf{Vor.:} \(f: \mathbb R \setminus \{\pm \sqrt{2}\} \rightarrow \mathbb R, x \mapsto \frac{3x^2+x-8}{x^2-2}\) \\
+\textbf{Beh.:} \(\text{LMAX}(f) = \{2 + \sqrt{2}\}, \text{ LMIN}(f) = \{2 - \sqrt{2}\}\), \\\(f\) ist bestimmt monoton in ihrer Domain.\footnote{Wir haben hier die Behauptung für die Monotonie von f etwas kurz gehalten, weil wir nicht alle Behauptungen erwähnen wollten, deswegen behaupten wir, dass f monoton ist, und bestimmen jegliche Monotonieverhalten (plural) in allen Teilen der Domain.}  \\
+\textbf{Bew.:} Nach Vorlesung ist \(f\) differenzierbar in ihrer Domain mit der Ableitung (Quotientenregel): \(f'(x) = \frac{(6x + 1) \cdot (x^2-2) - (3x^2+x-8)\cdot 2x}{(x^2-2)^2}\). Wenn man dies kürzt indem man alle Klammern auflöst und vereinfacht, ergibt sich: \(f'(x) = \frac{-x^2 + 4x - 2}{(x^2 - 2)^2}\). Nach Satz 3.48 müssen Nullstellen von \(f'(x)\) existieren, sodass \(f\) Extremstellen haben kann, also suchen wir Lösungen für \(f'(x) = 0\).\\
+Betrachte folgende Umformung:
+\begin{flalign*}
+    & 0 = f'(x) & \text{} \\
+    & 0 = \frac{-x^2 + 4x - 2}{(x^2 - 2)^2} & \text{| \(\cdot (x^2 - 2)^2\), \(x \ne \pm \sqrt{2}\)} \\
+    & \Longleftrightarrow 0 = {-x^2 + 4x - 2} & \text{| Lösung von einer quadratischen Gleichung} \\
+    & \Longleftrightarrow x_{1,2} = \frac{-4}{-2} \pm \frac{\sqrt{16-8}}{-2} & \text{| Auswerten} \\
+    & x_{1,2} = 2 \mp \sqrt{2} & 
+\end{flalign*}
+Nun wissen wir, dass die Stellen \(x = 2 \pm \sqrt{2}\) möglicherweise Extremstellen sein können. Gleichzeitig sind dies die einzigen Stellen, die Extremstellen sein können, aufgrund vom Satz 3.48. \\
+Da \(f\) vollständig differenzierbar ist, und somit auch vollständig stetig ist in ihrer Domain, betrachten wir den Differenzialwert von \(f'\) an den Stellen \(f(2 \pm \sqrt{2})\) um herauszufinden, ob \(f'\) einen Vorzeichenwechsel um diese Stelle hat, und wenn, was für ein VZW vorliegt. \\
+\(f'\) ist vollständig differenzierbar in jedem Punkt außer \(\sqrt{2}\) (nach Eigenschaften von rationalen Funktionen) mit der Ableitung \[f''(x) = \frac{(-2x+4) \cdot (x^2-2)^2 - (-x^2 + 4x -2) \cdot (4x^3-8x)}{(x^2-2)^4}\]
+Dies folgt aus der Quotientenregel und den Potenzgesetzen. \\
+Beobachte: \(f''(2 + \sqrt{2}) < 0\) und \(f''(2 - \sqrt{2}) > 0\). \\
+Somit hat \(f'\) einen VZW von \(+ \rightarrow -\) und von \(- \rightarrow +\) in den Stellen \(2 + \sqrt{2}\) bzw. \(2 - \sqrt{2}\). \\
+Hieraus folgt, dass\dots \\
+\textbf{1.:} \(f\) ein lokales Maximum in \(2 + \sqrt{2}\) besitzt, da die Umgebung \(]\sqrt{2}, +\infty[\) nur kleinere Werte enthält, was daraus folgt, dass \(f\) streng monoton steigend ist im Intervall \(]\sqrt{2}, 2+\sqrt{2}[\) und streng monoton fallend ist im Intervall \(]2+\sqrt{2}, +\infty[\). \\
+Dies beides folgt aus den Eigenschaften von \(f'\), die wir gerade bestimmt hatten. \pagebreak \\
+\textbf{2.:} \(f\) ein lokales Minimum in \(2 - \sqrt{2}\) besitzt, da die Umgebung \(]- \sqrt{2}, + \sqrt{2}\) nur größere Werte enthält, was daraus folgt, dass \(f\) streng monoton fallend ist im Intervall \(] - \sqrt{2}, 2 - \sqrt{2}[\) und streng monoton steigend ist im Intervall \(]2 - \sqrt{2}, \sqrt{2}[\). \\
+Dies beides folgt aus den Eigenschaften von \(f'\), die wir gerade bestimmt hatten. \\
+Nun ist das Extremverhalten von \(f\) geklärt.\\
+Des Weiteren sind wir nun aufgeklärt über das Monotonieverhalten von \(f\) in der Umgebung \(\left]-\sqrt{2}, +\infty\right[\  \setminus \{\sqrt{2}\}\). Nach dem eben bestimmten Verhalten von \(f'\) ist \(f\) monoton fallend im Intervall \(\left]-\infty, -\sqrt{2}\right[\).\\
+Somit ist das Monotonieverhalten von \(f\) vollständig geklärt.\\
+Damit gilt alles, was zu zeigen war. \qed
 \section*{Aufgabe 2}
 \textbf{Vor.:} \\
 \textbf{Beh.:} \\
