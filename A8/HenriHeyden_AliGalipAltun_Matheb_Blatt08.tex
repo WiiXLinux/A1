@@ -18,7 +18,7 @@
 \allowdisplaybreaks
 
 \setlength{\droptitle}{-11em}
-\setlength{\jot}{12pt}
+%\setlength{\jot}{12pt}
 
 \title{Mathematik für die Informatik B - Hausaufgabenserie 8}
 \author{Henri Heyden, Ali Galip Altun \\ \small stu240825, stu242631}
@@ -32,9 +32,14 @@
 
 \section*{Aufgabe 1}
 \textbf{Vor.:} \(f: \mathbb R \setminus \{\pm \sqrt{2}\} \rightarrow \mathbb R, x \mapsto \frac{3x^2+x-8}{x^2-2}\) \\
-\textbf{Beh.:} \(\text{LMAX}(f) = \{2 + \sqrt{2}\}, \text{ LMIN}(f) = \{2 - \sqrt{2}\}\), \\\(f\) ist bestimmt monoton in ihrer Domain.\footnote{Wir haben hier die Behauptung für die Monotonie von f etwas kurz gehalten, weil wir nicht alle Behauptungen erwähnen wollten, deswegen behaupten wir, dass f monoton ist, und bestimmen jegliche Monotonieverhalten (plural) in allen Teilen der Domain.}  \\
+\textbf{Beh.:} \(\text{LMAX}(f) = \{2 + \sqrt{2}\}, \text{ LMIN}(f) = \{2 - \sqrt{2}\}\), \\
+\(f\) ist streng monoton fallend in \(\left]-\infty, -\sqrt{2}\right[\), \\
+streng monoton fallend in \(] - \sqrt{2}, 2 - \sqrt{2}[\),\\
+streng monoton steigend in \(]2 - \sqrt{2}, \sqrt{2}[\), \\
+streng monoton steigend in \(]\sqrt{2}, 2+\sqrt{2}[\) und \\
+streng monoton fallend in \(]2+\sqrt{2}, +\infty[\).\\
 \textbf{Bew.:} Nach Vorlesung ist \(f\) differenzierbar in ihrer Domain mit der Ableitung (Quotientenregel): \(f'(x) = \frac{(6x + 1) \cdot (x^2-2) - (3x^2+x-8)\cdot 2x}{(x^2-2)^2}\). Wenn man dies kürzt indem man alle Klammern auflöst und vereinfacht, ergibt sich: \(f'(x) = \frac{-x^2 + 4x - 2}{(x^2 - 2)^2}\). Nach Satz 3.48 müssen Nullstellen von \(f'(x)\) existieren, sodass \(f\) Extremstellen haben kann, also suchen wir Lösungen für \(f'(x) = 0\).\\
-Betrachte folgende Umformung:
+Betrachte folgende Umformung: \pagebreak
 \begin{flalign*}
     & 0 = f'(x) & \text{} \\
     & 0 = \frac{-x^2 + 4x - 2}{(x^2 - 2)^2} & \text{| \(\cdot (x^2 - 2)^2\), \(x \ne \pm \sqrt{2}\)} \\
@@ -48,19 +53,41 @@ Da \(f\) vollständig differenzierbar ist, und somit auch vollständig stetig is
 Dies folgt aus der Quotientenregel und den Potenzgesetzen. \\
 Beobachte: \(f''(2 + \sqrt{2}) < 0\) und \(f''(2 - \sqrt{2}) > 0\). \\
 Somit hat \(f'\) einen VZW von \(+ \rightarrow -\) und von \(- \rightarrow +\) in den Stellen \(2 + \sqrt{2}\) bzw. \(2 - \sqrt{2}\). \\
-Hieraus folgt, dass\dots \\
+Hieraus folgt, dass\dots \pagebreak \\
 \textbf{1.:} \(f\) ein lokales Maximum in \(2 + \sqrt{2}\) besitzt, da die Umgebung \(]\sqrt{2}, +\infty[\) nur kleinere Werte enthält, was daraus folgt, dass \(f\) streng monoton steigend ist im Intervall \(]\sqrt{2}, 2+\sqrt{2}[\) und streng monoton fallend ist im Intervall \(]2+\sqrt{2}, +\infty[\). \\
-Dies beides folgt aus den Eigenschaften von \(f'\), die wir gerade bestimmt hatten. \pagebreak \\
+Dies beides folgt aus den Eigenschaften von \(f'\), die wir gerade bestimmt hatten. \\
 \textbf{2.:} \(f\) ein lokales Minimum in \(2 - \sqrt{2}\) besitzt, da die Umgebung \(]- \sqrt{2}, + \sqrt{2}\) nur größere Werte enthält, was daraus folgt, dass \(f\) streng monoton fallend ist im Intervall \(] - \sqrt{2}, 2 - \sqrt{2}[\) und streng monoton steigend ist im Intervall \(]2 - \sqrt{2}, \sqrt{2}[\). \\
 Dies beides folgt aus den Eigenschaften von \(f'\), die wir gerade bestimmt hatten. \\
 Nun ist das Extremverhalten von \(f\) geklärt.\\
 Des Weiteren sind wir nun aufgeklärt über das Monotonieverhalten von \(f\) in der Umgebung \(\left]-\sqrt{2}, +\infty\right[\  \setminus \{\sqrt{2}\}\). Nach dem eben bestimmten Verhalten von \(f'\) ist \(f\) monoton fallend im Intervall \(\left]-\infty, -\sqrt{2}\right[\).\\
 Somit ist das Monotonieverhalten von \(f\) vollständig geklärt.\\
-Damit gilt alles, was zu zeigen war. \qed
+Damit gilt alles, was zu zeigen war. \qed \pagebreak
 \section*{Aufgabe 2}
-\textbf{Vor.:} \\
-\textbf{Beh.:} \\
-\textbf{Bew.:}
+\textbf{Vor.:} Es seien \(a,b \in \mathbb R\) mit \(a < b\), sowie \(f,g : [a,b] \rightarrow \mathbb R\) stetige Funktionen, sodass \(f(a) \le g(a)\) gilt. Des Weiteren seien \(f,g\) differenzierbar auf \(\left]a,b\right[\), sodass \(f'(x) \le g'(x)\) gilt für alle \(x \in \left]a,b\right[\). \\
+\textbf{Beh.:} Es gilt \(f(x) \le g(x)\) für alle \(x \in \left[a,b\right]\) \\
+\textbf{Bew.:} Definiere folgende Hilfsfunktion: \(h: \left[a,b\right] \rightarrow \mathbb R, x \mapsto g(x) - f(x)\). \\
+Nach der Voraussetzung gilt folgende Umformung: 
+\begin{flalign*}
+    & f(a) \le g(a) & \text{| \(- f(a)\)} \\
+    & \Longleftrightarrow 0 \le g(a) - f(a) & \text{| Einsetzen} \\
+    & \Longleftrightarrow 0 \le h(a) & \\
+    & \Longleftrightarrow h(a) \ge 0
+\end{flalign*}
+Des Weiteren gilt nach der Voraussetzung folgendes für alle \(x \in \left]a,b\right[\) :
+\begin{flalign*}
+    & f'(x) \le g'(x) & \text{| \(- f'(x)\)} \\
+    & \Longleftrightarrow 0 \le g'(x) - f'(x) & \text{| Kombinationssatz der Differenzierbarkeit} \\
+    & \Longleftrightarrow 0 \le h'(x) & \\
+    & \Longleftrightarrow h'(x) \ge 0
+\end{flalign*}
+Damit ist \(h\) monoton steigend. Also gilt für alle \(x \in \left[a,b\right]\) : \(h(x) \ge h(a) \ge 0\). \pagebreak \\
+Dann gilt \(h(x) \ge 0\), und damit folgendes:
+\begin{flalign*}
+    & g(x) - f(x) \ge 0 & \\
+    & \Longleftrightarrow g(x) \ge f(x) & \\
+    & \Longleftrightarrow f(x) \le g(x)
+\end{flalign*}
+Was zu zeigen war. gg wp \qed
 \section*{Aufgabe 3}
 \textbf{Vor.:} \((x_n)_n \in \mathcal{S}(\mathbb{R})\) beliebig, sodass \(\lim_{n}(x_{n+1} - x_n ) = 0\) gilt. \\
 \textbf{Beh.:} \(\lim_{n} x_n \in \mathbb{R}\) \\
