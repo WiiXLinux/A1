@@ -1,0 +1,63 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[ngerman]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts} 
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titling}
+
+
+\newcommand*{\qed}{\null\nobreak\hfill\ensuremath{\square}}
+\newcommand*{\puffer}{\text{ }\text{ }\text{ }\text{ }}
+\newcommand*{\gedanke}{\textbf{-- }}
+\newcommand*{\GL}{\ \overset{>}{{}_\text{\scriptsize \(<\)}}\ } % Very ugly solution
+\newcommand*{\LG}{\ \overset{<}{{}_\text{\scriptsize \(>\)}}\ } % but it just works
+
+\pagestyle{plain}
+\allowdisplaybreaks
+
+\setlength{\droptitle}{-11em}
+\setlength{\jot}{12pt}
+
+\title{Mathematik für die Informatik B - Hausaufgabenserie 9}
+\author{Henri Heyden, Ali Galip Altun \\ \small stu240825, stu242631}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\doublespacing
+\section*{Aufgabe 1}
+\textbf{Vor.:} \(n \in \mathbb{N}_1\), \(f: [0, +\infty[\ \rightarrow\ \mathbb{R}, x \mapsto x^ne^{-x}\) \\
+\(I_1 := [0, n]\), \(I_2 := [n, +\infty[\) \\
+\textbf{Beh.:} \(f\) ist streng monoton steigend in \(I_1\), streng monoton fallend in \(I_2\) und es gilt: \(\text{LMAX}(f) = {n}\) \\
+\textbf{Bew.:} \(f\) ist über Kombinationssätze der Differenzierbarkeit differenzierbar in \(dom(f)\) mit der Ableitung:
+\begin{flalign*}
+    & f'(x) & \text{| Quotientenregel, Bruchrechnung} \\
+    & = nx^{n-1} \cdot e^{-x} + x^n \cdot \frac{- e^x}{(e^x)^2} & \text{| Bruchrechnung} \\
+    & = nx^{n-1} \cdot e^{-x} - x^n \cdot \frac{1}{e^x} & \text{| Potenzgesetze} \\
+    & = nx^{n-1} \cdot e^{-x} - x^n \cdot e^{-x} & \text{| Ausklammern} \\
+    & = \left( nx^{n-1} - x^n \right) \cdot e^{-x}
+\end{flalign*} für jedes \(x \in dom(f)\). \\
+Nach der Vorlesung ist bekannt, dass \(e^x > 0\) gilt, für \(x \in dom(f)\), somit ist für die Suche nach Nullstellen oder für das Vorzeichenverhalten von \(f'\) an einer Stelle \(x\) der Term "\(e^{-x}\)", der in \(f'(x)\) liegt, zu vernachlässigen, da somit auch \(e^{-x} = (e^x)^{-1} > 0\) durch die Regeln in angeordneten Körpern gilt. \\
+Wir werden nun die Ungleichungen \(f'(x) > 0\) und \(f'(x) < 0\) betrachten. Um dies etwas zu verkürzen, schreiben wir "\(f'(x) \GL 0\)" \ und betrachten damit beide Fälle, also beide Ungleichungen. Um die Bedeutung der Reihenfolge festzulegen, ist \(f'(x) \GL 0\) äquivalent zu \(0 \LG f'(x)\), genau wie der Ausdruck "\(a = 1 \pm -1\)"\ äquivalent zu "\(a = 1 \mp 1\)"\ ist. \\
+Damit betrachten wir die Ungleichungen, \(f'(x) \GL 0\):
+\begin{flalign*}
+    & \ \ f'(x) \GL 0 & \text{| Schreibweise, Einsetzen, \(e^x > 0\)} \\
+    & \Longleftrightarrow 0 \LG n \cdot x^{n-1} - x^n & \text{| Potenzgesetze} \\
+    & \Longleftrightarrow 0 \LG n \cdot x^{n-1} - x \cdot x^{n-1} & \text{| Ausklammern} \\
+    & \Longleftrightarrow 0 \LG (n-x) \cdot x^{n-1} & \text{| Wir betrachten nicht \(x = 0\) (dazu später noch was), \dots} \\
+    & & \text{\dots deswegen können wir\ \(x^{n-1} = 0\) ignorieren, \dots} \\
+    & & \text{\dots und im Fall \(n = 1\) gilt \(x^{n-1} = 1\)} \\
+    & \Longrightarrow 0 \LG n - x & \text{| Schreibweise} \\
+    & \Longleftrightarrow n - x \GL 0 & \text{| \(+x\), \(\cdot -1\)} \\
+    & \Longleftrightarrow x \LG n
+\end{flalign*}
+Somit gilt also \(f'(x) > 0\), wenn \(x < n\) gilt und \(f'(x) < 0\), wenn \(x < n\) gilt. \\
+Insbesondere gilt \(f'(x) = 0\), wenn \(x = n\) gilt, was aus einer ähnlichen Umformung folgt (Beachte hier immer noch, dass wir \(x = 0\) nicht betrachten, denn es gilt \(\forall x \in \left]-\infty, 0\right[: x \not\in dom(f)\) und somit kann 0 nicht innerer Punkt von \(dom(f)\) sein und somit kann keine Extremstelle von \(f\) vorliegen an 0, da keine Umgebung um 0 existiert). \\
+Aufgrund des Monotoniekriteriums sind die ersten beiden Aussagen, die zu zeigen waren gezeigt, und da \(x = n\) die einzige Nullstelle von \(f'\) ist, die wir betrachten können, gilt nun auch die dritte Aussage, die zu zeigen war nach Einsatztechnik. \\
+Somit ist alles gezeigt, was zu zeigen war \qed
+\end{document}
