@@ -75,11 +75,11 @@ Betrachte nun folgende Umformung der Ungleichung \(|a_n \cdot b_n - p| < \epsilo
     & \ge ||a_n \cdot b_n| - |p|| & \text{| S 4.8 (11)} \\
     & = ||a_n| \cdot |b_n| - |p||
 \end{flalign*}
-Wir wissen, dass ab einem Index die Folge \((|a_n|)_n\) monoton steigend ist.\\
+Wir wissen, dass \(\forall r > 0: \exists n_0: \forall n \ge n_0: r < |a_n|\) gilt, nach Voraussetzung.\\
 Des Weiteren wissen wir, dass \(|p| \in \mathbb R\) gilt. \\
-Somit muss \((|b_n|)_n\) monoton fallend sein, was durch den Betrag nur funktioniert, wenn \((b_n)_n\) gegen null konvergiert.\\
-Hört \((b_n)_n\) auf sich an 0 anzunähren, kann \((|b_n|)_n\) nicht gegen null konvergieren womit es einen Index geben wird, ab dem die kombinierte Folge\\
-(also \((a_n \cdot b_n)_n\)) gegen \(+\infty\) konvergiert, da sie ab diesem Index wieder anfinge monoton zu steigen. \\
-Damit ist \(\lim_n b_n = 0\) gezeigt, \gedanke was zu zeigen war. \qed
+Da \(||a_n| \cdot |b_n| - |p|| < \epsilon\) gilt, muss \(\forall r > 0: \exists n_0: \forall n \ge n_0: r > |b_n|\) gelten\footnote{Dies lässt sich durch Satz 2.10 und Satz 2.24 schlussfolgern.\\Dies ist ein Kriterium jeder Nullfolge, da es zu \(\forall \epsilon: \exists n_0: \forall n \ge n_0: |a_n - 0| < \epsilon\) äquivalent ist}, da \(p \in \mathbb C\) gilt. \\
+Wenn dies nicht gilt, ist divergiert das Produkt der Folgen, da sonst \(\forall r > 0: \exists n_0: \forall n \ge n_0: r < |b_n| \cdot |a_n|\) gilt, denn wenn \((|b_n|)_n\) gegen eine Zahl ungleich null konvergiert, gibt es nach dem Archimedischen Axiom ein \(n_0\), sodass dies gilt. \\
+Somit muss \(\lim_n b_n = 0\) gelten, \gedanke was zu zeigen war. \qed
 \section*{Aufgabe 3}
+:(
 \end{document}
